@@ -1,0 +1,24 @@
+{
+  "name": "multi-peer-webrtc",
+  "version": "1.0.0",
+  "description": "simple multi peer webrtc video call",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "WebRTC",
+    "video call",
+    "peer-to-peer",
+    "multi-peer",
+    "real-time communication"
+  ],
+  "author": "Abhinay Raj",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.18.2",
+    "socket.io": "4.7.4"
+  }
+}

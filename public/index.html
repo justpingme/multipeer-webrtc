@@ -1,0 +1,84 @@
+<!DOCTYPE html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Peer WebRTC Video Call</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        #localVideo {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            max-width: 100%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #remote-stream-video {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            overflow-y: auto;
+            max-height: calc(100vh - 120px);
+        }
+
+        video {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Multi-Peer WebRTC Video Call</h1>
+        <h3>Local Video Stream</h3>
+    </header>
+    <div style="flex: 1; overflow-y: auto;">
+        <video id="localVideo" autoplay muted playsinline></video>
+        <h3>Remote Video Streams</h3>
+        <div id="remote-stream-video"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <script type="module" src="./client.js"></script>
+</body>
+
+</html>
