@@ -7,8 +7,51 @@
 
 This project is a multi-peer WebRTC (Web Real-Time Communication) video call application. WebRTC is a free, open-source project that provides web browsers and mobile applications with real-time communication via simple application programming interfaces (APIs).
 
-## How it Works
 
+## simple diagram representing the basic flow of WebRTC communication between two users:
+
+          User A                        Signaling Server                     User B
+    +--------------+                   +------------------+              +--------------+
+    |              |                   |                  |              |              |
+    |  Camera +    |                   |                  |              |    + Camera  |
+    |  Microphone  |                   |                  |              |  Microphone  |
+    |              |                   |                  |              |              |
+    +-------|------+                   +--------|--------+               +---|----------+
+            |                                   |                            |
+            |   [Offer SDP, ICE Candidates]     |                            |
+            | ------------------------------->  |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   | [Offer SDP, ICE Candidates]|
+            |                                   | <--------------------------|
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |   [Answer SDP, ICE Candidates]    |                            |
+            | <---------------------------------|                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+            |                                   |                            |
+    +--------------+                    +------------------+            +--------------+
+                                  Real-Time Video & Audio Stream
+
+
+## How it Works
 WebRTC facilitates real-time audio and video communication between peers, directly in the web browser (serverless). Here's a simplified overview of how this multi-peer video call application works:
 
 1. **User Joins a Room:**
@@ -71,48 +114,6 @@ WebRTC facilitates real-time audio and video communication between peers, direct
 
 3. Join multiple users and start a video call.
 
-
-## simple diagram representing the basic flow of WebRTC communication between two users:
-
-          User A                        Signaling Server                     User B
-    +--------------+                   +------------------+              +--------------+
-    |              |                   |                  |              |              |
-    |  Camera +    |                   |                  |              |    + Camera  |
-    |  Microphone  |                   |                  |              |  Microphone  |
-    |              |                   |                  |              |              |
-    +-------|------+                   +--------|--------+               +---|----------+
-            |                                   |                            |
-            |   [Offer SDP, ICE Candidates]     |                            |
-            | ------------------------------->  |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   | [Offer SDP, ICE Candidates]|
-            |                                   | <--------------------------|
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |   [Answer SDP, ICE Candidates]    |                            |
-            | <---------------------------------|                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-            |                                   |                            |
-    +--------------+                    +------------------+            +--------------+
-                                  Real-Time Video & Audio Stream
 
 
 
